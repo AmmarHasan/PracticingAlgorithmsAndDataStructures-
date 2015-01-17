@@ -22,5 +22,11 @@ namespace PracticingAlgorithmsAndDataStructures1
             new YieldExample();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LinkedListPractice form2 = new LinkedListPractice();
+            form2.Show();
+        }
+
     }
 }

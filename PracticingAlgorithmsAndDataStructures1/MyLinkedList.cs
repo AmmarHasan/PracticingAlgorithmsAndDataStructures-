@@ -8,8 +8,8 @@ namespace PracticingAlgorithmsAndDataStructures1
 {
     class MyLinkedList
     {
-        Node head=new Node();
-        Node tail = new Node();
+        Node head;
+        Node tail ;
         public static ulong Count=0;
 
 
@@ -39,7 +39,58 @@ namespace PracticingAlgorithmsAndDataStructures1
                 temp = temp.Next;
             }
         }
-
+        public void RemoveLast() {
+            if (Count != 0) {
+                if (Count == 1)
+                    head = tail = null;
+                else {
+                    Node temp = head;
+                    while (temp.Next != tail) {
+                        temp.Next = temp;
+                    }
+                    temp.Next = null;
+                    tail = temp;
+                }
+                Count--;
+            }
+        }
+        public void RemoveFront()
+        {
+            if (Count != 0)
+            {
+                if (Count == 1)
+                    head = tail = null;
+                else
+                {
+                    head = head.Next;
+                }
+                Count--;
+            }
+        }
+        public int RemoveByValue(int value)
+        {
+            int i = 1;
+            if (Count != 0)
+            {
+                if (Count == 1 && head.Value == value)
+                    head = tail = null;
+                else
+                {
+                    Node temp = head;   
+                    while (temp.Next != null)
+                    {
+                        if (temp.Next.Value == value) {
+                            temp.Next = temp.Next.Next;
+                            break;
+                        }
+                        temp = temp.Next;
+                        i++;
+                    }
+                }
+                Count--;
+            }
+            return i;
+        }
         
         public class Node {
             public Node()

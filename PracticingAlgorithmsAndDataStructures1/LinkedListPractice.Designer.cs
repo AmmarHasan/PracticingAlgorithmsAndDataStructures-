@@ -1,4 +1,5 @@
-﻿namespace PracticingAlgorithmsAndDataStructures1
+﻿
+namespace PracticingAlgorithmsAndDataStructures1
 {
     partial class LinkedListPractice
     {
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.listView1 = new System.Windows.Forms.ListView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,6 +39,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBoxRemoveNodeWithValue = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -49,6 +52,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            
             // 
             // textBox1
             // 
@@ -125,11 +129,21 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Count: ";
+            // 
             // LinkedListPractice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 338);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBoxRemoveNodeWithValue);
             this.Controls.Add(this.button4);
@@ -157,5 +171,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBoxRemoveNodeWithValue;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label1;
     }
 }

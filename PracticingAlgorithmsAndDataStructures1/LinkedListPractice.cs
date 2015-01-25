@@ -13,10 +13,11 @@ namespace PracticingAlgorithmsAndDataStructures1
 {
     public partial class LinkedListPractice : Form
     {
-        MyLinkedList myList = new MyLinkedList();
+        MyLinkedList<int> myList = new MyLinkedList<int>();
         public LinkedListPractice()
         {
             InitializeComponent();
+            
 
         }
 
@@ -29,7 +30,36 @@ namespace PracticingAlgorithmsAndDataStructures1
         {
             AddFromFrontToListAndListView();
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddinLastToListAndListView();
 
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            myList.RemoveFront();
+
+            ListViewItem[] array = new ListViewItem[listView1.Items.Count];
+            //listView1.Items.CopyTo(array, 0);
+            //listView1.Clear();
+            listView1.Items.RemoveAt(0);
+            //foreach (ListViewItem s in array)
+            //{
+            //    listView1.Items.Add(s);
+            //}
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            myList.RemoveLast();
+            listView1.Items.RemoveAt(listView1.Items.Count - 1);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            listView1.Items.RemoveAt(myList.RemoveAllOccurancesByValue(Convert.ToInt32(textBoxRemoveNodeWithValue.Text)));
+        }
+        
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -51,7 +81,7 @@ namespace PracticingAlgorithmsAndDataStructures1
             if (textBox1.Text != "")
             {
                 temp = Convert.ToInt32(textBox1.Text);
-                myList.AddNodeFromFront(new MyLinkedList.Node(temp));
+                myList.AddNodeFromFront(new Node<int>(temp));
                 ListViewItem[] array = new ListViewItem[listView1.Items.Count];
                 listView1.Items.CopyTo(array, 0);
                 listView1.Clear();
@@ -69,16 +99,12 @@ namespace PracticingAlgorithmsAndDataStructures1
             if (textBox2.Text != "")
             {
                 temp = Convert.ToInt32(textBox2.Text);
-                myList.AddNodeInLast(new MyLinkedList.Node(temp));
+                myList.AddNodeInLast(new Node<int>(temp));
                 listView1.Items.Add(new ListViewItem(Convert.ToString(temp)));
             }
             textBox2.Clear();
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AddinLastToListAndListView();
-
-        }
+      
         private void validateTextInteger(object sender, EventArgs e)
         {
             Exception X = new Exception();
@@ -105,31 +131,6 @@ namespace PracticingAlgorithmsAndDataStructures1
                 }
                 catch (Exception) { }
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            myList.RemoveFront();
-
-            ListViewItem[] array = new ListViewItem[listView1.Items.Count];
-            //listView1.Items.CopyTo(array, 0);
-            //listView1.Clear();
-            listView1.Items.RemoveAt(0);
-            //foreach (ListViewItem s in array)
-            //{
-            //    listView1.Items.Add(s);
-            //}
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            myList.RemoveLast();
-            listView1.Items.RemoveAt(listView1.Items.Count-1);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            listView1.Items.RemoveAt(myList.RemoveByValue(Convert.ToInt32(textBoxRemoveNodeWithValue.Text)));
         }
 
     }

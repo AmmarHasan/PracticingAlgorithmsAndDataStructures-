@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PracticingAlgorithmsAndDataStructures1
 {
-    public class MyLinkedList
+    public class MyLinkedList<T>:System.Collections.Generic.ICollection<T>
     {
-        Node head;
-        Node tail ;
-        public static ulong Count=0;
-        public void AddNodeFromFront(Node node){
-            Node temp = head;
+        Node<T> head;
+        Node<T> tail ;
+        public int Count{ get; private set;}
+        public void AddNodeFromFront(Node<T> node){
+            Node<T> temp = head;
             head = node;
             head.Next = temp;
             Count++;
@@ -20,7 +21,7 @@ namespace PracticingAlgorithmsAndDataStructures1
                 tail = head;
             }
         }
-        public void AddNodeInLast(Node node)
+        public void AddNodeInLast(Node<T> node)
         {
             tail.Next = node;
             tail = node;   
@@ -31,7 +32,7 @@ namespace PracticingAlgorithmsAndDataStructures1
             }
         }
         public void PrintList() {
-            Node temp = head;
+            Node<T> temp = head;
             while (temp != null) {
                 Console.WriteLine(""+temp.Value);
                 temp = temp.Next;
@@ -42,9 +43,9 @@ namespace PracticingAlgorithmsAndDataStructures1
                 if (Count == 1)
                     head = tail = null;
                 else {
-                    Node temp = head;
+                    Node<T> temp = head;
                     while (temp.Next != tail) {
-                        temp.Next = temp;
+                        temp = temp.Next;
                     }
                     temp.Next = null;
                     tail = temp;
@@ -65,21 +66,21 @@ namespace PracticingAlgorithmsAndDataStructures1
                 Count--;
             }
         }
-        public int RemoveByValue(int value)
+        public int RemoveAllOccurancesByValue(T value)
         {
-            int i = 1;
+            int i = 0;
             if (Count != 0)
             {
-                if (Count == 1 && head.Value == value)
+                if (Count == 1 && head.Value.Equals(value))
                     head = tail = null;
                 else
                 {
-                    Node temp = head;   
+                    Node<T> temp = head;   
                     while (temp.Next != null)
                     {
-                        if (temp.Next.Value == value) {
+                        if (temp.Next.Value.Equals(value)) {
                             temp.Next = temp.Next.Next;
-                            break;
+                            Count--;
                         }
                         temp = temp.Next;
                         i++;
@@ -89,24 +90,92 @@ namespace PracticingAlgorithmsAndDataStructures1
             }
             return i;
         }
-        
-        public class Node {
-            public Node()
+        public bool RemoveFirstOccurancesByValue(T value)
+        {
+            if (Count != 0)
             {
-                this.Next = null;
+                if (Count == 1 && head.Value.Equals(value))
+                    head = tail = null;
+                else
+                {
+                    Node<T> temp = head;
+                    while (temp.Next != null)
+                    {
+                        if (temp.Next.Value.Equals(value))
+                        {
+                            temp.Next = temp.Next.Next;
+                            Count--;
+                            return true;
+                        }
+                        temp = temp.Next;
+                    }
+                }
             }
-            public Node(int value)
-            {
-                this.Value = value;
-                this.Next = null;
-            }
-            public Node(int value,Node next) {
-                this.Value = value;
-                this.Next = next;
-            }
-           
-            public int Value { get; set; }
-            public Node Next { get; set; }
+            return false;
         }
+
+
+        #region ICollection
+        public void Add(T item)
+        {
+            AddNodeFromFront(new Node<T>(item));
+        }
+        public void Clear()
+        {
+            head = tail = null;
+            Count = 0;
+        }
+
+        public bool Contains(T item)
+        {
+            Node<T> temp = head;
+            while (temp != null) {
+                if (temp.Value.Equals(item))
+                    return true;
+                temp=temp.Next;
+            }
+            return false;
+        }
+
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            Node<T> temp = head;
+            while (temp != null) {
+                array[arrayIndex++] = temp.Value;
+                temp = temp.Next;
+            }
+        }
+
+        int ICollection<T>.Count
+        {
+            get { return Count; }
+        }
+
+        public bool IsReadOnly
+        {
+            get { return false; }
+        }
+
+        public bool Remove(T item)
+        {
+            return RemoveFirstOccurancesByValue(item);
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> temp = head;
+            while (temp != null) {
+                yield return temp.Value;
+                temp = temp.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((System.Collections.Generic.IEnumerable<T>)this).GetEnumerator();
+        } 
+        #endregion
+
+      
     }
 }

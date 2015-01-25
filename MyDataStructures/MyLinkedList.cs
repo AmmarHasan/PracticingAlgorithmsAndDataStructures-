@@ -9,8 +9,8 @@ namespace PracticingAlgorithmsAndDataStructures1
 {
     public class MyLinkedList<T>:System.Collections.Generic.ICollection<T>
     {
-        Node<T> head;
-        Node<T> tail ;
+        public Node<T> head{get;private set;}
+        public Node<T> tail{get;private set;}
         public int Count{ get; private set;}
         public void AddNodeFromFront(Node<T> node){
             Node<T> temp = head;

@@ -1,7 +1,7 @@
 ﻿
 namespace PracticingAlgorithmsAndDataStructures1
 {
-    partial class LinkedListPractice
+    partial class LinkedListForm
     {
         /// <summary>
         /// Required designer variable.

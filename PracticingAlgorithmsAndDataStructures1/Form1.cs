@@ -24,7 +24,7 @@ namespace PracticingAlgorithmsAndDataStructures1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LinkedListPractice form2 = new LinkedListPractice();
+            LinkedListForm form2 = new LinkedListForm();
             form2.Show();
         }
 

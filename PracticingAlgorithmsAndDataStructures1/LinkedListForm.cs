@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace PracticingAlgorithmsAndDataStructures1
 {
-    public partial class LinkedListPractice : Form
+    public partial class LinkedListForm : Form
     {
         MyLinkedList<int> myList = new MyLinkedList<int>();
-        public LinkedListPractice()
+        public LinkedListForm()
         {
             InitializeComponent();
             

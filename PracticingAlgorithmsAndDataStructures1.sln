@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticingAlgorithmsAndDataStructures1", "PracticingAlgorithmsAndDataStructures1\PracticingAlgorithmsAndDataStructures1.csproj", "{22B2A647-093D-4D1E-B781-ADDB824D8AB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticingLinkedList", "PracticingAlgorithmsAndDataStructures1\PracticingLinkedList.csproj", "{22B2A647-093D-4D1E-B781-ADDB824D8AB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delete uplicate node in linked list", "Delete uplicate node in linked list\Delete uplicate node in linked list.csproj", "{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDataStructures", "MyDataStructures\MyDataStructures.csproj", "{300224BB-382C-4233-9490-126078E8930B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticingQueue", "PracticingQueue\PracticingQueue.csproj", "{D1050157-3C51-4DC7-99C4-F620CE50D1DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{300224BB-382C-4233-9490-126078E8930B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{300224BB-382C-4233-9490-126078E8930B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{300224BB-382C-4233-9490-126078E8930B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{300224BB-382C-4233-9490-126078E8930B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1050157-3C51-4DC7-99C4-F620CE50D1DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1050157-3C51-4DC7-99C4-F620CE50D1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1050157-3C51-4DC7-99C4-F620CE50D1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1050157-3C51-4DC7-99C4-F620CE50D1DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

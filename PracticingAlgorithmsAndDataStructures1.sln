@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticingAlgorithmsAndDataStructures1", "PracticingAlgorithmsAndDataStructures1\PracticingAlgorithmsAndDataStructures1.csproj", "{22B2A647-093D-4D1E-B781-ADDB824D8AB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delete uplicate node in linked list", "Delete uplicate node in linked list\Delete uplicate node in linked list.csproj", "{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{22B2A647-093D-4D1E-B781-ADDB824D8AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22B2A647-093D-4D1E-B781-ADDB824D8AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22B2A647-093D-4D1E-B781-ADDB824D8AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2E70F6-D61C-4C3D-9F5D-BC97CAFE6D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

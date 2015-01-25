@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace PracticingAlgorithmsAndDataStructures1
 {
-    class MyLinkedList
+    public class MyLinkedList
     {
         Node head;
         Node tail ;
         public static ulong Count=0;
-
-
         public void AddNodeFromFront(Node node){
             Node temp = head;
             head = node;

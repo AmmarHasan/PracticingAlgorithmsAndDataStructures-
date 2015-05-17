@@ -85,9 +85,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\MyDataStructures\MyDataStructures.csproj">
       <Project>{300224bb-382c-4233-9490-126078e8930b}</Project>
       <Name>MyDataStructures</Name>
